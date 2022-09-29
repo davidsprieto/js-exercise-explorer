@@ -7,7 +7,7 @@ searchBtn.addEventListener('click', getExercises);
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': '59ba742d48msh46feac59f2323b3p1be004jsn2f643a858b6e',
+        'X-RapidAPI-Key': apiKey,
         'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
     }
 };
