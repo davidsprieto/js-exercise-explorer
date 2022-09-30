@@ -63,6 +63,7 @@ body {
 
 .search-control, .search-btn {
     width: 100%;
+    text-align: center;
 }
 
 .search-control {
@@ -78,6 +79,7 @@ body {
 
 .search-control::placeholder {
     color: var(--tenne-tawny);
+    text-align: center;
 }
 
 .search-btn {
@@ -288,6 +290,10 @@ body {
     font-size: 1.8rem;
     font-weight: 600;
     width: 100%;
+}
+
+.modal-bottom {
+    margin-top: 4rem;
 }
 
 /* Media Queries */
