@@ -20,26 +20,30 @@ const OPTIONS = {
     }
 };
 
-// all exercises fetch request
+// all exercises are fetched and displayed when the page loads
 fetch('https://exercisedb.p.rapidapi.com/exercises', OPTIONS)
     .then(response => response.json())
     .then(data => displayOnPage(data))
-    .catch(err => {
-        if (err) {
-            EXERCISE_LIST.innerHTML = "Error retrieving all exercises.";
-            EXERCISE_LIST.classList.add('notFound');
-        }
-    });
+    .catch(err => handleError(err));
 
-// function that performs the fetch request for the user's inputted body part to fetch the list of exercises for that body part
+// function that performs the fetch request with the user's input and fetches the list of exercises by body part
 function getExercises() {
     let searchInput = document.getElementById('search-input').value.trim().toLowerCase();
     fetch(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${searchInput}`, OPTIONS)
         .then(response => response.json())
         .then(data => displayOnPage(data))
+        .catch(err => handleError(err, searchInput));
+}
+
+// function that handles errors and performs a fetch request with the user's input and fetches the list of exercises by target muscle if the body part fetch request doesn't work
+function handleError(err, searchInput) {
+    console.error(err);
+    fetch(`https://exercisedb.p.rapidapi.com/exercises/target/${searchInput}`, OPTIONS)
+        .then(response => response.json())
+        .then(data => displayOnPage(data))
         .catch(err => {
             if (err) {
-                EXERCISE_LIST.innerHTML = "Sorry we didn't find that body part!";
+                EXERCISE_LIST.innerHTML = "Sorry, couldn't find what you were searching for!";
                 EXERCISE_LIST.classList.add('notFound');
             }
         });
