@@ -1,2 +1,2 @@
 # Exercise Explorer
-JavaScript Application to Search for Exercises from the ExerciseDB API!
+JavaScript SPA to Search for Exercises from the ExerciseDB API!
