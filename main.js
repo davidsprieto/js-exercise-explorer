@@ -1,3 +1,4 @@
+// constant variables not to be reassigned values
 const API_KEY = '59ba742d48msh46feac59f2323b3p1be004jsn2f643a858b6e';
 const SEARCH_BTN = document.getElementById('search-btn');
 const EXERCISE_LIST = document.getElementById('exercise');
@@ -89,7 +90,7 @@ function getExerciseDetails(e) {
 // modal
 function exerciseModal(data) {
     console.log(data);
-    let html = `
+    EXERCISE_DETAILS_CONTENT.innerHTML = `
        <h2>Target Muscle:</h2>
        <p class="exercise-title">${data.bodyPart}</p>
        <p class="exercise-category"></p>
@@ -110,6 +111,5 @@ function exerciseModal(data) {
            </svg></a></span>
        </div>
     `;
-    EXERCISE_DETAILS_CONTENT.innerHTML = html;
     EXERCISE_DETAILS_CONTENT.parentElement.classList.add('showExercise');
 }
