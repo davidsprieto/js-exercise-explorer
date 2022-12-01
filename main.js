@@ -38,7 +38,7 @@ function getExercises() {
 
 // function that handles errors and performs a fetch request with the user's input and fetches the list of exercises by target muscle if the body part fetch request doesn't work
 function handleError(err, searchInput) {
-    console.error(err);
+    // console.error(err);
     fetch(`https://exercisedb.p.rapidapi.com/exercises/target/${searchInput}`, OPTIONS)
         .then(response => response.json())
         .then(data => displayOnPage(data))
@@ -80,7 +80,7 @@ function getExerciseDetails(e) {
     e.preventDefault();
     if (e.target.classList.contains('exercise-btn')) {
         let exerciseItem = e.target.parentElement.parentElement;
-        console.log(exerciseItem);
+        // console.log(exerciseItem);
         fetch(`https://exercisedb.p.rapidapi.com/exercises/exercise/${exerciseItem.dataset.id}`, OPTIONS)
             .then(response => response.json())
             .then(data => exerciseModal(data));
@@ -89,7 +89,7 @@ function getExerciseDetails(e) {
 
 // modal
 function exerciseModal(data) {
-    console.log(data);
+    // console.log(data);
     EXERCISE_DETAILS_CONTENT.innerHTML = `
        <h2>Target Muscle:</h2>
        <p class="exercise-title">${data.bodyPart}</p>
