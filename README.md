@@ -12,4 +12,4 @@ Programming language:
 - JavaScript
 
 API:
-ExerciseDB
+- ExerciseDB
