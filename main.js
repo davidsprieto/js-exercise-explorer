@@ -1,5 +1,4 @@
 // constant variables not to be reassigned values
-const API_KEY = '59ba742d48msh46feac59f2323b3p1be004jsn2f643a858b6e';
 const SEARCH_BTN = document.getElementById('search-btn');
 const EXERCISE_LIST = document.getElementById('exercise');
 const EXERCISE_DETAILS_CONTENT = document.querySelector('.exercise-details-content');
