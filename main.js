@@ -1,3 +1,7 @@
+"use strict";
+
+const X_RAPID_API_KEY = config.X_RapidAPI_Key;
+
 // constant variables not to be reassigned values
 const SEARCH_BTN = document.getElementById('search-btn');
 const EXERCISE_LIST = document.getElementById('exercise');
@@ -15,7 +19,7 @@ EXERCISE_CLOSE_BTN.addEventListener('click', () => {
 const OPTIONS = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': '59ba742d48msh46feac59f2323b3p1be004jsn2f643a858b6e',
+        'X-RapidAPI-Key': X_RAPID_API_KEY,
         'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
     }
 };
